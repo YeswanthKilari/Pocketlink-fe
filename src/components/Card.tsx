@@ -33,7 +33,7 @@ export function Card({ title, link, type }: CardProps) {
   const formattedTwitterLink = link.replace("x.com", "twitter.com");
 
   return (
-    <div className="bg-white h-min  font-light border rounded-md shadow-md border-gray-200">
+    <div className="bg-white h-min w-150px  font-light border rounded-md shadow-md border-gray-200">
       <div className="part-1 flex justify-between items-center p-2">
         <div className="flex gap-2">
           <PlusIcon />
@@ -46,7 +46,7 @@ export function Card({ title, link, type }: CardProps) {
           <PlusIcon />
         </div>
       </div>
-      <div className="part-2 pt-4 overflow-hidden justify-center items-center h-auto ">
+      <div className="part-2 pt-4 overflow-hidden justify-center items-center object-center  h-min ">
         {type === "youtube" && (
           <iframe
             className="w-full p-3"
@@ -60,7 +60,7 @@ export function Card({ title, link, type }: CardProps) {
           ></iframe>
         )}
         {type === "twitter" && (
-          <blockquote className="twitter-tweet">
+          <blockquote className="twitter-tweet w-50">
             <a href={formattedTwitterLink}>{formattedTwitterLink}</a>
           </blockquote>
         )}
