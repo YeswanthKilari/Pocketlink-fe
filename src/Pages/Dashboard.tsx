@@ -10,39 +10,47 @@ export function Dashboard() {
     const [modelopen, setmodelopen] = useState(false);
 
     return (
-        <div className="flex dark:bg-black text-black  ">
+        <div className="flex dark:bg-black text-black">
+            {/* Sidebar (Fixed) */}
             <Sidebar />
-            <div className='flex flex-col  w-full h-min-screen pl-4 dark:bg-black  bg-gray-100'>
-                <Createmodel open={modelopen} onClose={() => setmodelopen(false)} />
-                <div className=' w-full h-screen'>
-                    <div className='flex gap-2 m-6 justify-end pt-4 pr-5'>
-                        <Button 
-                            text="Share Me" 
-                            onClick={() => alert('Button clicked!')} 
-                            variant="primary" 
-                            size="lg"
-                            startIcon={<ShareIcon />}
-                        />
-                        <Button 
-                            text="Add content" 
-                            onClick={() => setmodelopen(true)} 
-                            variant="primary" 
-                            size="lg"
-                            startIcon={<PlusIcon />}
-                        />
-                    </div>
-                    <div className='flex flex-wrap pt-10 gap-3.5   '>
-                        <Card title='Hello World' link='https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB' type='youtube' />
-                        <Card title='Second Tweet' link='https://x.com/_kingjonah/status/1897300923812340102' type='twitter' />
-                        
-                        <Card title='Hello World' link='https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB' type='youtube' />
-                        <Card title='Second Tweet' link='https://x.com/_kingjonah/status/1897300923812340102' type='twitter' />
-                        
-                        <Card title='Hello World' link='https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB' type='youtube' />
-                        <Card title='Second Tweet' link='https://x.com/_kingjonah/status/1897300923812340102' type='twitter' />
 
-                        <Card title='Hello World' link='https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB' type='youtube' />
-                         <Card title='Hello World' link='https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB' type='youtube' />
+            {/* Main Content (With Left Padding for Sidebar) */}
+            <div className="flex flex-col w-full min-h-screen pl-72 dark:bg-black bg-gray-100">
+                <Createmodel open={modelopen} onClose={() => setmodelopen(false)} />
+
+                {/* Header Section */}
+                <div className="flex justify-end gap-2 pt-4 pr-5">
+                    <Button 
+                        text="Share Me" 
+                        onClick={() => alert('Button clicked!')} 
+                        variant="primary" 
+                        size="md"
+                        startIcon={<ShareIcon />}
+                    />
+                    <Button 
+                        text="Add content" 
+                        onClick={() => setmodelopen(true)} 
+                        variant="primary" 
+                        size="md"
+                        startIcon={<PlusIcon />}
+                    />
+                </div>
+
+                
+                <div className="p-6">
+                    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+                        <Card title="Hello World" link="https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB" type="youtube" />
+                        <Card title="Second Tweet" link="https://x.com/_kingjonah/status/1897300923812340102" type="twitter" />
+                        <Card title="Another Video" link="https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB" type="youtube" />
+                        <Card title="Twitter Post" link="https://x.com/_kingjonah/status/1897300923812340102" type="twitter" />
+                        <Card title="More Content" link="https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB" type="youtube" />
+                        <Card title="Final Tweet" link="https://x.com/_kingjonah/status/1897300923812340102" type="twitter" />
+                        <Card title="Hello World" link="https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB" type="youtube" />
+                        <Card title="Second Tweet" link="https://x.com/_kingjonah/status/1897300923812340102" type="twitter" />
+                        <Card title="Another Video" link="https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB" type="youtube" />
+                        <Card title="Twitter Post" link="https://x.com/_kingjonah/status/1897300923812340102" type="twitter" />
+                        <Card title="More Content" link="https://youtu.be/PBDxZkIJLNg?si=eHmOIFdQZAt3JcwB" type="youtube" />
+                        <Card title="Final Tweet" link="https://x.com/_kingjonah/status/1897300923812340102" type="twitter" />
                     </div>
                 </div>
             </div>
