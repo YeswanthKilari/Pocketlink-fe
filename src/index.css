@@ -11,7 +11,19 @@
 }
 
 
-*{
-    
-    
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style child elements (which are the Card components) */
+.my-masonry-grid_column > div { /* change div to reference the element containing the item  */
+  margin-bottom: 30px;
 }
