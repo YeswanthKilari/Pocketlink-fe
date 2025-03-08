@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Dashboard } from './Pages/Dashboard';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Signin from './Pages/Signin';
@@ -18,6 +18,3 @@ function App() {
 }
 
 export default App;
-
-
-
