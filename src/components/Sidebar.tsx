@@ -1,3 +1,4 @@
+// src/components/Sidebar.tsx
 import { SidebarItem } from "./SidebarItem";
 import { TwitterIcon } from "../icons/TwitterIcon";
 import { Youtube } from "../icons/Youtube";

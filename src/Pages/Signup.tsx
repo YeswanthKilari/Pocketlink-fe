@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import axios from "axios";
