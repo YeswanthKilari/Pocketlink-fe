@@ -15,27 +15,39 @@ const Signup = () => {
     const username = usernameRef.current?.value;
     const password = passwordRef.current?.value;
     const email = emailRef.current?.value;
+
+    if (!username || !password || !email) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
     console.log("Signup with", username, password, email);
-    await axios.post(BACKEND_URL + "/api/v1/signup", {
-      username,
-      email,
-      password,
-    });
-    navigate("/signin");
+    try {
+      await axios.post(BACKEND_URL + "/api/v1/signup", {
+        username,
+        email,
+        password,
+      });
+      alert("Signup successful. Redirecting to Signin...");
+      navigate("/signin");
+    } catch (error) {
+      console.error("Signup failed", error);
+      alert("Signup failed. Please try again.");
+    }
   }
 
   return (
     <div className="w-full h-screen bg-gray-200 flex justify-center items-center">
       <div className="bg-white rounded border min-w-48 p-5">
-        <Input ref={usernameRef} placeholder="username" />
-        <Input ref={passwordRef} placeholder="password" />
-        <Input ref={emailRef} placeholder="email" />
+        <Input ref={usernameRef} type="text" placeholder="Username" />
+        <Input ref={emailRef} type="email" placeholder="Email" />
+        <Input ref={passwordRef} type="password" placeholder="Password" />
         <div className="flex justify-center items-center pt-4">
-          <Button onClick={signup} variant="primary" text="Signup" fullwidth={true} />
+          <Button onClick={signup} variant="primary" text="Sign Up" fullwidth={true} />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Signup;
